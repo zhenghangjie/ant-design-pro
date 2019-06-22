@@ -1,47 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><link rel="stylesheet" href="/umi.css"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0"><title>Ant Design Pro</title><link rel="icon" href="/favicon.png" type="image/x-icon"><script>window.routerBase = "/";</script><script>var __assign = (this && this.__assign) || function () {
-        __assign = Object.assign || function(t) {
-            for (var s, i = 1, n = arguments.length; i < n; i++) {
-                s = arguments[i];
-                for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                    t[p] = s[p];
-            }
-            return t;
-        };
-        return __assign.apply(this, arguments);
-    };
-    var prevFetch = window.fetch;
-    var enableAudit = false;
-    var apiDomain = "https://5d0c93555deb4b00081f56e2--ant-design-pro.netlify.com";
-    function urlHasOwnProtocol(url) {
-        return url.startsWith('http://') || url.startsWith('https://') || url.startsWith('//');
-    }
-    var isStaticAsset = function (url) {
-        return /.html??S*/g.test(url) || /.js??S*/g.test(url) || /.css??S*/g.test(url);
-    };
-    function getEntireUrl(url, apiDomain) {
-        return !urlHasOwnProtocol(url) ? apiDomain + (url.startsWith('/') ? url : "/" + url) : url;
-    }
-    /*
-           只处理本身 url 不带协议的请求
-            1. 当开启操作审计时，除静态资源请求外所有接口直接走当前域，同时带上相应的头信息
-            2. 当未开启操作审计时，请求转换为跨域请求调用
-           */
-    window.fetch = function (url, options) {
-        if (options === void 0) { options = {}; }
-        if (!urlHasOwnProtocol(url)) {
-            if (enableAudit && !isStaticAsset(url)) {
-                // 开启操作审计时带上相应头信息
-                var auditOptions = __assign({}, options, { headers: __assign({}, options.headers) });
-                return prevFetch.call(window, url, auditOptions);
-            }
-            // 未开启操作审计请求以跨域方式发出
-            var corsOptions = __assign({}, options,{credentials: 'omit'});
-            // 发起跨域请求
-            var entireUrl = getEntireUrl(url, apiDomain);
-            return prevFetch.call(window, entireUrl, corsOptions);
-        }
-        return prevFetch.call(window, url, options);
-    };</script></head><body><noscript>Sorry, we need js to run correctly!</noscript><div id="root"><style>.page-loading-warp {
+<!DOCTYPE html><html lang="en"><head><link rel="stylesheet" href="/umi.98df2cda.css"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0"><title>Ant Design Pro</title><link rel="icon" href="/favicon.png" type="image/x-icon"><script>window.routerBase = "/";</script></head><body><noscript>Sorry, we need js to run correctly!</noscript><div id="root"><style>.page-loading-warp {
           padding: 120px;
           display: flex;
           justify-content: center;
@@ -180,20 +137,4 @@
             -webkit-transform: rotate(405deg);
             transform: rotate(405deg);
           }
-        }</style><div class="page-loading-warp"><div class="ant-spin ant-spin-lg ant-spin-spinning"><span class="ant-spin-dot ant-spin-dot-spin"><i class="ant-spin-dot-item"></i><i class="ant-spin-dot-item"></i><i class="ant-spin-dot-item"></i><i class="ant-spin-dot-item"></i></span></div></div></div><script src="/umi.js"></script><script>(function(){ 
-        if (!location.port) {
-          (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-              }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-              m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-          })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-          ga('create', 'UA-72788897-6', 'auto');
-          ga('send', 'pageview');
-        }
-      })();</script></body></html>
+        }</style><div class="page-loading-warp"><div class="ant-spin ant-spin-lg ant-spin-spinning"><span class="ant-spin-dot ant-spin-dot-spin"><i class="ant-spin-dot-item"></i><i class="ant-spin-dot-item"></i><i class="ant-spin-dot-item"></i><i class="ant-spin-dot-item"></i></span></div></div></div><script src="/umi.006cb464.js"></script></body></html>
