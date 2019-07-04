@@ -1,1 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[2],{Hl79:function(e,t,n){"use strict";var u=n("TqRt");Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=u(n("q1tI")),d=function(e){var t=e.children;return a.default.createElement("div",null,t)},l=d;t.default=l}}]);
+//# sourceMappingURL=layouts__BlankLayout.5bbc35b3.async.js.map
